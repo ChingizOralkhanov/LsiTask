@@ -12,9 +12,9 @@ namespace LsiTask.DB.Repositories
 
         }
 
-        public List<Export> GetDataByDate (DateTime date)
+        public List<Export> GetDataByDate (DateTime from, DateTime to)
         {
-            var result = dbSet.Where(p => p.Date == date).ToList();
+            var result = dbSet.Where(e => (e.Date >= from) && (e.Date <= to)).ToList();
             return result;
         }
     }

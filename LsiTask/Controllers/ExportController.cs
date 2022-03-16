@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LsiTask.DB.Models;
+using LsiTask.DB.Repositories;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
-
 
 namespace LsiTask.Controllers
 {
@@ -8,36 +10,37 @@ namespace LsiTask.Controllers
     [ApiController]
     public class ExportController : ControllerBase
     {
-        // GET: api/<ExportController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly ExportRepository exportRepository;
+
+        //TODO Add Try catch
+        public ExportController(ExportRepository exportRepository)
         {
-            return new string[] { "value1", "value2" };
+            this.exportRepository = exportRepository;
         }
 
-        // GET api/<ExportController>/5
+        [HttpGet("all")]
+        public List<Export> GetAll()
+        {
+            var result = exportRepository.GetAll();
+            return result;
+        }
+
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Export Get(int id)
         {
-            return "value";
+            return exportRepository.Get(id);
         }
 
-        // POST api/<ExportController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<ExportController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ExportController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            exportRepository.Delete(id);
+        }
+
+        [HttpGet("{from},{to}")]
+        public List<Export> GetByDateRange(DateTime from, DateTime to)
+        {
+            return exportRepository.GetDataByDate(from, to);
         }
     }
 }

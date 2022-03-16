@@ -16,7 +16,7 @@ namespace LsiTask.DB.Repositories
             dbSet = context.Set<Model>();
         }
 
-        public Model Get(long id)
+        public Model Get(int id)
         {
             return dbSet.SingleOrDefault(x => x.ID == id);
         }
@@ -39,7 +39,13 @@ namespace LsiTask.DB.Repositories
             context.SaveChanges();
         }
 
-        public void Delete(long id)
+        public void SaveNew(Model model)
+        {
+            dbSet.Add(model);
+            context.SaveChanges();
+        }
+
+        public void Delete(int id)
         {
             var model = Get(id);
             dbSet.Remove(model);
