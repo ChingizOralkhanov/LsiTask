@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsiTask", "LsiTask\LsiTask.csproj", "{A500D360-2466-4878-AA67-4923A655B19D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A500D360-2466-4878-AA67-4923A655B19D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A500D360-2466-4878-AA67-4923A655B19D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A500D360-2466-4878-AA67-4923A655B19D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A500D360-2466-4878-AA67-4923A655B19D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5504B054-C2D3-46D0-93B1-B79FD9074350}
+	EndGlobalSection
+EndGlobal
